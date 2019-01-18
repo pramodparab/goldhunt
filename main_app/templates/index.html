@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<meta charset="utf-8">
+	<title>Gold Hunt</title>
+</head>
+<body>
+<h1>Lets Hunt Gold !!!</h1>
+{% for goldtype in goldtype %}
+<p>{{ goldtype.name }}
+{% if goldtype.value > '0' %}
+   	{{ goldtype.value }}
+{% else %}
+   	unknown
+{% endif %}
+
+<br>      
+
+{% endfor %}
+</body>
+</html>
